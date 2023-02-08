@@ -21,12 +21,12 @@
     "prettier-plugin-style-order": "^0.2.2",
     "prettier-plugin-tailwindcss": "^0.2.2",
     "prettier-plugin-two-style-order": "^1.0.1",
-    "typescript": "next"
+    "typescript": "beta"
   },
   "pnpm": {
     "overrides": {
       "prettier": "^2.8.3",
-      "typescript": "next"
+      "typescript": "beta"
     }
   }
 }
