@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+# run once and silence
+kubectl cluster-info >"/dev/null" 2>&1
+
+# exit
+cat <<EndOfMessage
+
+        Go forth and issue Nx CLI commands!
+
+EndOfMessage

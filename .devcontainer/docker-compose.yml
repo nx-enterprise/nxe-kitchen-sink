@@ -1,0 +1,55 @@
+version: '3.9'
+services:
+  nxe-apps:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - ../.env-development # load the rest of your environment variables
+    volumes:
+      # Update this to wherever you want VS Code to mount the folder of your project
+      - ..:/nxe-apps-ws:cached
+
+    # Uncomment the next four lines if you will use a ptrace-based debuggers like C++, Go, and Rust.
+    # cap_add:
+    #  - SYS_PTRACE
+    # security_opt:
+    #   - seccomp:unconfined
+
+    # Use "forwardPorts" in **devcontainer.json** to forward an app port locally.
+    # (Adding the "ports" property to this file will not forward from a Codespace.)
+
+    # extra_hosts:
+    #   - 'subdomain.domain.com:10.220.0.60'
+  nxe-k3s-server:
+    env_file:
+      - ../.env-development
+    deploy:
+      resources:
+        limits:
+          cpus: '1.00'
+          memory: 1024M
+        reservations:
+          cpus: '0.50'
+          memory: 256M
+
+  nxe-k3s-agent:
+    env_file:
+      - ../.env-development
+    deploy:
+      replicas: 3 # override to 3 from the inherited: docker-compose.nxe-k3s.yml
+      resources:
+        limits:
+          cpus: '1.50'
+          memory: 1536M
+        reservations:
+          cpus: '0.50'
+          memory: 256M
+
+volumes:
+  nxe-config:
+  nxe-cache-angular:
+  nxe-cache-dist:
+  nxe-cache-node:
+  nxe-cache-bin:
+  nxe-k3s-data: {}
