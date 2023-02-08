@@ -1,0 +1,9 @@
+{
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "installJupyterlab": false,
+      "version": "3.11"
+    },
+    "ghcr.io/devcontainers/features/ruby:1": { "version": "latest" }
+  }
+}

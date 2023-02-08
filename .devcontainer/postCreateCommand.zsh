@@ -9,7 +9,7 @@ source "${NXE_SCRIPTS}/init-postCreate-base.sh" && echo "Sourced ${NXE_SCRIPTS}/
 #source $NXE_WS/.devcontainer/testCreate.zsh
 
 # optional things
-source "${NXE_SCRIPTS}/nxe-post-node-packages.zsh" # node stuff
+#source "${NXE_SCRIPTS}/nxe-post-node-packages.zsh" # node stuff
 
 # Notifiy that we're done this script
 echo "NXE Done: postCreateCommand"

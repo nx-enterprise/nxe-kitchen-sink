@@ -46,11 +46,6 @@
       "modules": "oh-my-posh,PowerLine,Terminal-Icons",
       "version": "latest"
     },
-    "ghcr.io/devcontainers/features/python:1": {
-      "installJupyterlab": false,
-      "version": "3.11"
-    },
-    "ghcr.io/devcontainers/features/ruby:1": { "version": "latest" },
     "ghcr.io/devcontainers/features/rust:1": {
       "profile": "complete",
       "version": "latest"
